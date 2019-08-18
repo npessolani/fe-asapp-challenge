@@ -1,0 +1,104 @@
+{
+  "name": "fe-asapp-challenge",
+  "version": "1.0.0",
+  "description": "FE Asapp Challenge",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next -p 3000",
+    "build": "next build",
+    "start": "next start",
+    "test": "NODE_ENV=test jest --watch",
+    "test-win": "SET NODE_ENV=test&& jest --watch"
+  },
+  "author": "Nicolas Pessolani",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-plugin-styled-components": "^1.7.1",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "next": "9.0.3",
+    "nprogress": "^0.2.0",
+    "prop-types": "^15.6.2",
+    "react": "16.9.0",
+    "react-adopt": "^0.6.0",
+    "react-dom": "16.9.0",
+    "react-stripe-checkout": "^2.6.3",
+    "react-transition-group": "^2.5.0",
+    "styled-components": "^3.4.9",
+    "waait": "^1.0.2"
+  },
+  "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "casual": "^1.5.19",
+    "enzyme-to-json": "^3.3.4",
+    "jest": "^24.9.0"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/jest.setup.js",
+    "testPathIgnorePatterns": [
+      "<rootDir>/.next/",
+      "<rootDir>/node_modules/"
+    ],
+    "transform": {
+      "\\.(gql|graphql)$": "jest-transform-graphql",
+      ".*": "babel-jest",
+      "^.+\\.js?$": "babel-jest"
+    }
+  },
+  "//": "This is our babel config, I prefer this over a .babelrc file",
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      },
+      "production": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      },
+      "test": {
+        "presets": [
+          [
+            "next/babel",
+            {
+              "preset-env": {
+                "modules": "commonjs"
+              }
+            }
+          ]
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      }
+    }
+  }
+}

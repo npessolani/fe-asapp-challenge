@@ -1,6 +1,44 @@
 # Fe-asapp-challenge
 ASAPP frontend challenge
 
+## Environment setup
+
+ - Install [Node.js](https://nodejs.org/)
+   - Recommended method is by using [NVM](https://github.com/creationix/nvm)
+   - Recommended Node.js version is the latest LTS
+ - Update `npm` to the latest version by running `npm i -g npm@latest`
+ - Run `npm install` to install the project dependencies
+
+## Development
+
+### 1) Build the assets:
+
+```
+npm run build
+```
+
+### 2) Run the app:
+
+```
+npm run start
+```
+
+### 3) Run the development:
+
+```
+npm run dev
+```
+
+### 4) Navigate to:
+```
+https://localhost:3000/messaging/
+```
+
+### 5) Run the test:
+```
+npm run test
+```
+
 # Info Challenge
 ASAPP Frontend Challenge
 ========================
