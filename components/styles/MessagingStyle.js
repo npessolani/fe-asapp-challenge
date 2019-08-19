@@ -1,19 +1,16 @@
 import styled from 'styled-components';
 
 const MesssagingStyle = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  max-height: calc(100vh - 200px);
-  min-height: calc(100vh - 200px);
-  border-radius: 5px;
-  margin: 0 auto;
-  overflow-y: auto;
-  background: ${props => props.theme.white};
-  border-radius: 5px 5px 0 0;
-  border: 1px solid ${props => props.theme.white};
-  box-sizing: border-box;
   margin: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: ${props => props.theme.graySoft};
+  border-radius: 5px;
+  width: 100%;
+  position: relative;
+  min-height: calc(100vh - 200px);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.25);
+  background-color: ${props => props.theme.white};
 `;
 
 export default MesssagingStyle;

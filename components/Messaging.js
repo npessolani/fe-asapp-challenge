@@ -1,20 +1,29 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MessagingStyle from '../components/styles/MessagingStyle';
+import HeaderMessage from '../components/HeaderMessage';
+import Messages from '../components/Messages';
+import Controls from '../components/Controls';
 
 class Messaging extends Component {
   render() {
-    const { sender } = this.props;
-    return <MessagingStyle>{sender}</MessagingStyle>;
+    const { user } = this.props;
+    return (
+      <MessagingStyle>
+        {user && <HeaderMessage user={user} />}
+        <Messages />
+        <Controls />
+      </MessagingStyle>
+    );
   }
 }
 
 Messaging.defaultProps = {
-  sender: 'Owner'
+  user: {}
 };
 
 Messaging.propTypes = {
-  sender: PropTypes.string.isRequired
+  user: PropTypes.object // eslint-disable-line react/forbid-prop-types
 };
 
 export default Messaging;

@@ -18,7 +18,7 @@ const StyledPage = styled.div`
 `;
 
 const Inner = styled.div`
-
+  padding: 1rem;
 `;
 
 injectGlobal`
@@ -37,6 +37,7 @@ injectGlobal`
   html {
     box-sizing: border-box;
     font-size: 14px;
+    color: ${theme.grayHard};
     background-color: ${theme.graySoft};
   }
   *, *:before, *:after {
