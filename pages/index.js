@@ -1,20 +1,6 @@
 import ContainerStyle from '../components/styles/ContainerStyle';
 import Messaging from '../components/Messaging';
-
-const Users = [
-  {
-    name: 'Laura',
-    avatar: 'http://localhost:3000/static/laura.jpg',
-    rol: 'sender',
-    email: 'laura@gmail.com'
-  },
-  {
-    name: 'Rob',
-    avatar: 'static/rob.jpg',
-    rol: 'receiver',
-    email: 'rob@gmail.com'
-  }
-];
+import Users from '../static/mockUsers.json';
 
 const Home = props => (
   <ContainerStyle>

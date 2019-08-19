@@ -10,6 +10,7 @@ const theme = {
   grayHard: '#333',
   graySoft: '#ededed',
   blue: '#3483fa',
+  blueHard: '#1e6dff',
   maxWidth: '1200px'
 };
 
@@ -46,7 +47,7 @@ injectGlobal`
   body {
     padding: 0;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1rem;
     line-height: 2;
     font-family: 'Proxima Nova Regular';
   }

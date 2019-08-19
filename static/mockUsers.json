@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Laura",
+    "avatar": "static/laura.jpg",
+    "rol": "sender",
+    "email": "laura@gmail.com"
+  },
+  {
+    "name": "Rob",
+    "avatar": "static/rob.jpg",
+    "rol": "receiver",
+    "email": "rob@gmail.com"
+  }
+]
