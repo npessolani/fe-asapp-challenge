@@ -1,13 +1,20 @@
+import React, { Component } from 'react';
 import ContainerStyle from '../components/styles/ContainerStyle';
 import Messaging from '../components/Messaging';
-import Users from '../static/mockUsers.json';
+import users from '../static/mockUsers.json';
+//import messages from '../static/mockMessages.json';
 
-const Home = props => (
-  <ContainerStyle>
-    {Users.map((user, key) => (
-      <Messaging user={user} key={key} />
-    ))}
-  </ContainerStyle>
-);
+class Home extends Component {
+  render() {
+    const { user } = this.props;
+    return (
+      <ContainerStyle>
+        {users.map((user, key) => (
+          <Messaging user={user} key={key} />
+        ))}
+      </ContainerStyle>
+    );
+  }
+}
 
 export default Home;

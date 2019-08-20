@@ -1,6 +1,8 @@
 # Fe-asapp-challenge
 ASAPP frontend challenge
 
+![alt text](https://drive.google.com/open?id=0B6V0_h1xamAzVzJldDY4RHk1cE1zOXBneDduZ29JeEEyQWg4)
+
 ## Environment setup
 
  - Install [Node.js](https://nodejs.org/)

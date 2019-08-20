@@ -4,9 +4,9 @@
   "description": "FE Asapp Challenge",
   "main": "index.js",
   "scripts": {
-    "dev": "next -p 3000",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "test": "NODE_ENV=test jest --watch",
     "test-win": "SET NODE_ENV=test&& jest --watch"
   },
@@ -17,6 +17,8 @@
     "babel-plugin-styled-components": "^1.7.1",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
+    "express": "^4.17.1",
+    "isomorphic-fetch": "^2.2.1",
     "next": "9.0.3",
     "nprogress": "^0.2.0",
     "prop-types": "^15.6.2",
@@ -26,6 +28,8 @@
     "react-stripe-checkout": "^2.6.3",
     "react-textarea-autosize": "^7.1.0",
     "react-transition-group": "^2.5.0",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0",
     "styled-components": "^3.4.9",
     "waait": "^1.0.2"
   },

@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Laura",
+    "avatar": "static/laura.jpg",
+    "text": "Hola"
+  },
+  {
+    "name": "Rob",
+    "avatar": "static/rob.jpg",
+    "text": "Como va?"
+  }
+]

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const MesssagingStyle = styled.div`
+const MessagingStyle = styled.div`
   margin: 1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -13,4 +13,4 @@ const MesssagingStyle = styled.div`
   background-color: ${props => props.theme.white};
 `;
 
-export default MesssagingStyle;
+export default MessagingStyle;
