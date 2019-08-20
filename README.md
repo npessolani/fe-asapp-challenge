@@ -1,7 +1,7 @@
 # Fe-asapp-challenge
 ASAPP frontend challenge
 
-![alt text](https://drive.google.com/open?id=0B6V0_h1xamAzVzJldDY4RHk1cE1zOXBneDduZ29JeEEyQWg4)
+![image](https://drive.google.com/uc?export=view&id=0B6V0_h1xamAzVzJldDY4RHk1cE1zOXBneDduZ29JeEEyQWg4)
 
 ## Environment setup
 
