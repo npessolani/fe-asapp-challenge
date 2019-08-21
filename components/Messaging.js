@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import io from 'socket.io-client';
 import PropTypes from 'prop-types';
 import MessagingStyle from '../components/styles/MessagingStyle';
@@ -6,25 +6,31 @@ import HeaderMessage from '../components/HeaderMessage';
 import Messages from '../components/Messages';
 import Controls from '../components/Controls';
 
-class Messaging extends React.Component {
+class Messaging extends Component {
   constructor(props) {
     super(props);
     this.state = {
       message: '',
-      messages: []
+      messages: [],
+      sender: '',
+      clean: false,
+      btnDisabled: true
     };
     this.handleMessage = this.handleMessage.bind(this);
-    this.handleChangeFinal = this.handleChangeFinal.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleTyping = this.handleTyping.bind(this);
   }
 
   componentDidMount() {
     this.socket = io('http://localhost:3000');
     this.socket.on('message', this.handleMessage);
+    this.socket.on('notifyTyping', this.handleTyping);
   }
 
   componentWillUnmount() {
     this.socket.off('message', this.handleMessage);
+    this.socket.off('notifyTyping', this.handleTyping);
     this.socket.close();
   }
 
@@ -32,8 +38,19 @@ class Messaging extends React.Component {
     this.setState(state => ({ messages: state.messages.concat(message) }));
   };
 
-  handleChangeFinal = value => {
-    this.setState({ message: value });
+  handleTyping = sender => {
+    this.setState({
+      sender: sender
+    });
+  };
+
+  handleChange = e => {
+    this.setState({
+      message: e.target.value,
+      btnDisabled: e.target.value === '',
+      clean: false
+    });
+    this.socket.emit('notifyTyping', this.props.user.name);
   };
 
   handleSubmit = event => {
@@ -47,11 +64,16 @@ class Messaging extends React.Component {
     };
 
     this.socket.emit('message', message);
+    this.socket.emit('notifyTyping', '');
 
     this.setState(state => ({
       message: '',
       messages: state.messages.concat(message)
     }));
+    this.setState({
+      btnDisabled: true,
+      clean: true
+    });
   };
 
   render() {
@@ -59,10 +81,16 @@ class Messaging extends React.Component {
     return (
       <MessagingStyle>
         {user && <HeaderMessage user={user} />}
-        <Messages user={user} messages={this.state.messages} />
+        <Messages
+          user={user}
+          messages={this.state.messages}
+          sender={this.state.sender}
+        />
         <Controls
           handleSubmit={this.handleSubmit}
-          handleChangeFinal={value => this.handleChangeFinal(value)}
+          handleChange={e => this.handleChange(e)}
+          btnDisabled={this.state.btnDisabled}
+          clean={this.state.clean}
         />
       </MessagingStyle>
     );

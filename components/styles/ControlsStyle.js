@@ -57,6 +57,7 @@ const ControlsStyle = styled.div`
     background-color: ${props => props.theme.blue};
     color: ${props => props.theme.white};
     cursor: pointer;
+    outline:none;
     &:disabled,
     &:disabled:hover {
       border-color: rgba(0, 0, 0, 0.04);

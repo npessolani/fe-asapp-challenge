@@ -5,12 +5,15 @@ import Message from '../components/Message';
 
 class Messages extends Component {
   render() {
-    const { user, messages } = this.props;
+    const { user, messages, sender } = this.props;
     return (
       <MessagesStyle>
-        {this.props.messages.map((message, key) => (
-          <Message message={message} user={this.props.user} key={key} />
+        {messages.map((message, key) => (
+          <Message message={message} user={user} key={key} />
         ))}
+        {sender !== user.name && sender !== '' && (
+          <span className="messsage-typing">{sender} is typing...</span>
+        )}
       </MessagesStyle>
     );
   }
@@ -18,12 +21,14 @@ class Messages extends Component {
 
 Messages.defaultProps = {
   user: {},
-  messages: []
+  messages: [],
+  sender: ''
 };
 
 Messages.propTypes = {
   user: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  messages: PropTypes.array
+  messages: PropTypes.array,
+  sender: PropTypes.string
 };
 
 export default Messages;

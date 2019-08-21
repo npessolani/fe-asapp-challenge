@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ContainerStyle from '../components/styles/ContainerStyle';
 import Messaging from '../components/Messaging';
 import users from '../static/mockUsers.json';
-//import messages from '../static/mockMessages.json';
 
 class Home extends Component {
   render() {

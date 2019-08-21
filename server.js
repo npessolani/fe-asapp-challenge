@@ -16,6 +16,10 @@ io.on('connection', socket => {
     messages.push(data);
     socket.broadcast.emit('message', data);
   });
+
+  socket.on('notifyTyping', data => {
+    socket.broadcast.emit('notifyTyping', data);
+  });
 });
 
 nextApp.prepare().then(() => {
